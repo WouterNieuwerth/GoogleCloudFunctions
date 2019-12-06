@@ -6,6 +6,7 @@ const _ = require('lodash')
 let feedZipped = _.zip(feedAsArray)
 for (column in feedZipped) {
     let feedZippedUniq = _.uniq(feedZipped)
+    console.log(feedZippedUniq)
 }
 
 async function distribute() {
