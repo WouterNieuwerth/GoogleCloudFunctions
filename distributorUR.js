@@ -4,9 +4,11 @@ const feedAsArray = [['merk', 'type'],['Philips', 'HR 183600'],['Dyson', 'ALLERG
 const _ = require('lodash')
 
 let feedUnzipped = _.unzip(feedAsArray)
-for (column in feedUnzipped) {
-    let feedUnzippedUniq = _.uniq(feedUnzipped)
-    console.log(feedUnzippedUniq)
+for (var i=0; i<feedUnzipped.length; i++) {
+    let column = feedUnzipped[i];
+    var columnUniq = _.uniq(column)
+    console.log('-----------')
+    console.log(columnUniq)
 }
 
 async function distribute() {
