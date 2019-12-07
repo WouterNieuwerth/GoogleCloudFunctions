@@ -8,7 +8,7 @@ let listOfOptions = []
 
 let queryArray = []
 for (var i=0; i<queryObject.length; i++){
-    queryArray.push(queryObject[i].query)
+    queryArray.push(queryObject[i]['query'])
 }
 
 // Dit is de functie die parallel uitgevoerd gaat worden.
