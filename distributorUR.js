@@ -51,6 +51,7 @@ for (var i=0; i<feedUnzipped.length; i++) {
     
         var options = {
             url: URL,
+            'content-type': 'application/json',
             body: JSON.stringify(payload)
         }
     
@@ -73,6 +74,8 @@ async function distribute() {
 
 let output = distribute()
 console.log(output)
-output.then(function(result){
-    console.log(result.body)
+output.then(function(results){
+    for (var i=0; i<results.length; i++) {
+        console.log(results[i].body)
+    }
 })
