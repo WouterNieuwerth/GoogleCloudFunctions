@@ -59,9 +59,9 @@ for (var i=0; i<feedUnzipped.length; i++) {
     }
 }
 
-console.log('-----------')
-console.log('listOfOptions:')
-console.log(listOfOptions)
+// console.log('-----------')
+// console.log('listOfOptions:')
+// console.log(listOfOptions)
 
 // Dit is de functie die uitgevoerd moet worden uiteindelijk. Geeft de resultaten van alle parallel uitgevoerde functies terug.
 async function distribute() {
@@ -73,3 +73,6 @@ async function distribute() {
 
 let output = distribute()
 console.log(output)
+output.then(function(result){
+    console.log(result)
+})
