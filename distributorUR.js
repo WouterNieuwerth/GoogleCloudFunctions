@@ -6,6 +6,11 @@ const _ = require('lodash')
 const request = require("request")
 let listOfOptions = []
 
+let queryArray = []
+for (var i=0; i<queryObject.length; i++){
+    queryArray.push(queryObject[i].query)
+}
+
 // Dit is de functie die parallel uitgevoerd gaat worden.
 const asyncOperation = function(options) {
     return new Promise(function(resolve, reject){
@@ -29,7 +34,7 @@ for (var i=0; i<feedUnzipped.length; i++) {
     console.log(columnUniq)
 
     const payload = {
-        'searchterms': queryObject,
+        'searchterms': queryArray,
         'brands': columnUniq
     }
     console.log('-----------')
