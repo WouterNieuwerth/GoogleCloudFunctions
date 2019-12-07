@@ -61,7 +61,7 @@ for (var i=0; i<feedUnzipped.length; i++) {
 
 console.log('-----------')
 console.log('listOfOptions:')
-console.log(options)
+console.log(listOfOptions)
 
 // Dit is de functie die uitgevoerd moet worden uiteindelijk. Geeft de resultaten van alle parallel uitgevoerde functies terug.
 async function distribute() {
