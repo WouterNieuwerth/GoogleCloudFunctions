@@ -29,14 +29,14 @@ let feedUnzipped = _.unzip(feedAsArray)
 for (var i=0; i<feedUnzipped.length; i++) {
     let column = feedUnzipped[i];
     let columnUniq = _.uniq(column)
-    console.log('-----------')
-    console.log('columnUniq:')
-    console.log(columnUniq)
+    // console.log('-----------')
+    // console.log('columnUniq:')
+    // console.log(columnUniq)
 
     let chunks = _.chunk(queryArray,2)
-    console.log('-----------')
-    console.log('chunks:')
-    console.log(chunks)
+    // console.log('-----------')
+    // console.log('chunks:')
+    // console.log(chunks)
 
     for (var j=0; j<chunks.length; j++) {
         let chunk = chunks[j]
@@ -45,9 +45,9 @@ for (var i=0; i<feedUnzipped.length; i++) {
             'searchterms': chunk,
             'brands': columnUniq
         }
-        console.log('-----------')
-        console.log('payload:')
-        console.log(payload)
+        // console.log('-----------')
+        // console.log('payload:')
+        // console.log(payload)
     
         var options = {
             url: URL,
@@ -59,6 +59,10 @@ for (var i=0; i<feedUnzipped.length; i++) {
     }
 }
 
+console.log('-----------')
+console.log('listOfOptions:')
+console.log(options)
+
 // Dit is de functie die uitgevoerd moet worden uiteindelijk. Geeft de resultaten van alle parallel uitgevoerde functies terug.
 async function distribute() {
     // Running Promises in parallel
@@ -67,4 +71,5 @@ async function distribute() {
     return await Promise.all(listOfPromises);
 }
 
-console.log(distribute())
+let output = distribute()
+console.log(output)
