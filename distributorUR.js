@@ -33,20 +33,30 @@ for (var i=0; i<feedUnzipped.length; i++) {
     console.log('columnUniq:')
     console.log(columnUniq)
 
-    const payload = {
-        'searchterms': queryArray,
-        'brands': columnUniq
-    }
+    let chunks = _.chunk(queryArray,2)
     console.log('-----------')
-    console.log('payload:')
-    console.log(payload)
+    console.log('chunks:')
+    console.log(chunks)
 
-    var options = {
-        url: URL,
-        body: JSON.stringify(payload)
+    for (var j=0; j<chunks.length; j++) {
+        let chunk = chunks[j]
+
+        const payload = {
+            'searchterms': chunk,
+            'brands': columnUniq
+        }
+        console.log('-----------')
+        console.log('payload:')
+        console.log(payload)
+    
+        var options = {
+            url: URL,
+            body: JSON.stringify(payload)
+        }
+    
+        listOfOptions.push(options)
+
     }
-
-    listOfOptions.push(options)
 }
 
 // Dit is de functie die uitgevoerd moet worden uiteindelijk. Geeft de resultaten van alle parallel uitgevoerde functies terug.
