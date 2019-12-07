@@ -74,5 +74,5 @@ async function distribute() {
 let output = distribute()
 console.log(output)
 output.then(function(result){
-    console.log(result)
+    console.log(result.body)
 })
