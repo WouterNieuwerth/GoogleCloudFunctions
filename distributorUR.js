@@ -9,7 +9,7 @@ let listOfOptions = []
 // Dit is de functie die parallel uitgevoerd gaat worden.
 const asyncOperation = function(options) {
     return new Promise(function(resolve, reject){
-        request.post(options, callback(err, response, body){
+        request.post(options, function (err, response, body) {
             if (err) {
                 reject(err)
             } else {
